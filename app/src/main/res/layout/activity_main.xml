@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hedan.hedan_piechart.MainActivity"
+    >
+
+    <com.hedan.piechart_library.PieChart_View
+        android:id="@+id/pie_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="50dp"
+        app:isAnimation="true"
+        app:isTouchFlag="true"
+        app:animaDuration="5000"
+        app:mRadius="140dp"
+        app:nameColor="#f00"
+        app:name="清明时节雨纷"
+        app:nameSize="16sp"
+        app:nameOrientation="horizontal"
+        app:pieChartWidth="70dp"
+        app:alphaWidth="10dp"
+        app:alphaPieColor="#fff"
+        app:alphaPieTran="100"
+        app:segmentAngle="0.5"
+        app:startAngle="180"
+        app:textColor="#000"
+        app:textSize="18sp"
+        app:textOrientation="path"
+        app:inCricleColor="#eeeeee"
+        />
+</RelativeLayout>
