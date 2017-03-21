@@ -15,11 +15,11 @@
         <attr name="textSize" format="dimension"/>
         <attr name="textColor" format="color"/>
         <attr name="pieChartWidth" format="dimension"/>
+        <attr name="mRadius" format="dimension"/>
         <attr name="alphaWidth" format="dimension"/>
         <attr name="alphaPieTran" format="integer"/>
         <attr name="alphaPieColor" format="color"/>
         <attr name="inCricleColor" format="color"/>
-        <attr name="mRadius" format="dimension"/>
         <attr name="isAnimation" format="boolean"/>
         <attr name="isTouchFlag" format="boolean"/>
         <attr name="startAngle" format="integer"/>

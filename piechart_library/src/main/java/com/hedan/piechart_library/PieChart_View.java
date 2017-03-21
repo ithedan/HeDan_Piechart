@@ -130,12 +130,12 @@ public class PieChart_View extends View {
         textSize = array.getDimensionPixelOffset(R.styleable.PieChart_View_textSize, dp2px(16));
         textColor = array.getColor(R.styleable.PieChart_View_textColor, Color.BLACK);
         textOrientation = array.getInt(R.styleable.PieChart_View_textOrientation, PiePath);
-        mRadius = array.getDimensionPixelOffset(R.styleable.PieChart_View_mRadius, 0);
         pieChartWidth = array.getDimensionPixelOffset(R.styleable.PieChart_View_pieChartWidth, 0);
+        mRadius = array.getDimensionPixelOffset(R.styleable.PieChart_View_mRadius, 0);
         alphaWidth = array.getDimensionPixelOffset(R.styleable.PieChart_View_alphaWidth, 0);
         alphaPieColor = array.getColor(R.styleable.PieChart_View_alphaPieColor, Color.WHITE);
         alphaPieTran = array.getInteger(R.styleable.PieChart_View_alphaPieTran, 80);
-        inCricleColor = array.getColor(R.styleable.PieChart_View_inCricleColor, Color.WHITE);
+        inCricleColor = array.getColor(R.styleable.PieChart_View_inCricleColor, Color.TRANSPARENT);
         isAnimation = array.getBoolean(R.styleable.PieChart_View_isAnimation, true);
         isTouchFlag = array.getBoolean(R.styleable.PieChart_View_isTouchFlag, true);
         drawStartAngle = array.getInteger(R.styleable.PieChart_View_startAngle, 0);
@@ -303,7 +303,7 @@ public class PieChart_View extends View {
             float drawAngle = animatedValue - startAngle;
             if (Math.min(sweepAngle, drawAngle) >= 0) {
                 float sweepNewAngle = Math.min(sweepAngle, drawAngle) - segmentAngle;
-                drawInCricle(canvas,startAngle, sweepNewAngle,i);
+                drawInCricle(canvas,startAngle, Math.min(sweepAngle, drawAngle),i);
                 if (angleTag == i) {
                     canvas.drawArc(touchOutRecF, startAngle,  sweepNewAngle, false, arcPaint);
                     canvas.drawArc(touchAlphaRecF, startAngle,  sweepNewAngle, false, alphaPait);
@@ -320,7 +320,7 @@ public class PieChart_View extends View {
      * 绘制内圆
      */
     private void drawInCricle(Canvas canvas,float startAngle,float sweepAngle,int i) {
-        if (inCricleColor == Color.WHITE) {
+        if (inCricleColor == Color.TRANSPARENT) {
             return;
         }
         inCriclePaint.setColor(inCricleColor);
